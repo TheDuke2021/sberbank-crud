@@ -26,7 +26,7 @@ public class WebConfig implements WebMvcConfigurer {
 
         // Adds default pagination parameters for all API endpoints
         // in case these parameters were not explicitly set by the client in the HTTP request
-        resolver.setFallbackPageable(Pageable.ofSize(DEFAULT_PER_PAGE).withPage(1));
+        resolver.setFallbackPageable(Pageable.ofSize(DEFAULT_PER_PAGE).withPage(0));
 
         argumentResolvers.add(resolver);
     }
