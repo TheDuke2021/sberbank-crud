@@ -18,7 +18,7 @@ public class ItemService {
 
     private Item findOrThrowItemById(Long id) {
         return itemRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Товар с id %d не найден!".formatted(id)));
+                .orElseThrow(() -> new EntityNotFoundException("Item with id %d was not found!".formatted(id)));
     }
 
     public List<ItemDto> getAllItems(Pageable pageable) {
