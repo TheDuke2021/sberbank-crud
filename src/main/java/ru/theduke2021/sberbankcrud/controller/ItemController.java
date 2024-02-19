@@ -1,5 +1,6 @@
 package ru.theduke2021.sberbankcrud.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -36,13 +37,13 @@ public class ItemController {
 
     @PutMapping("/{id}")
     @ResponseStatus(NO_CONTENT)
-    public void replaceItem(@PathVariable Long id, @RequestBody ItemDto itemDto) {
+    public void replaceItem(@PathVariable Long id, @Valid @RequestBody ItemDto itemDto) {
         itemService.replaceItemById(id, itemDto);
     }
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public ItemDto createItem(@RequestBody ItemDto itemDto) {
+    public ItemDto createItem(@Valid @RequestBody ItemDto itemDto) {
         return itemService.createItem(itemDto);
     }
 
