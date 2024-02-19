@@ -24,8 +24,8 @@ public class WebConfig implements WebMvcConfigurer {
         resolver.setSizeParameterName("perPage");
         resolver.setMaxPageSize(DEFAULT_PER_PAGE);
 
-        // Добавляет дефолтные параметры пагинации для всех эндпоинтов,
-        // если эти параметры явно не указаны клиентом в HTTP-запросе
+        // Adds default pagination parameters for all API endpoints
+        // in case these parameters were not explicitly set by the client in the HTTP request
         resolver.setFallbackPageable(Pageable.ofSize(DEFAULT_PER_PAGE).withPage(1));
 
         argumentResolvers.add(resolver);
