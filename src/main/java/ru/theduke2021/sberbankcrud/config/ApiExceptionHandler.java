@@ -13,7 +13,7 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 @RestControllerAdvice
 public class ApiExceptionHandler {
 
-    // Handles exceptions that occur with domain objects with invalid fields
+    // Handles exceptions that occur with domain objects that have invalid fields
     @ResponseStatus(BAD_REQUEST)
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public ApiError handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
