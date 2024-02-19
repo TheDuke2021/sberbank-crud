@@ -1,4 +1,4 @@
-package ru.theduke2021.sberbankcrud.exception;
+package ru.theduke2021.sberbankcrud.dto;
 
 import lombok.Data;
 
